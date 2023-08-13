@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Calorie Counter</string>
+    <string name="title_new_food_page">Register a new food</string>
+    <string name="food_name_label">Food name</string>
+    <string name="unit_of_measurement_label">Unit of measurement (Example: Kg, mL, etc)</string>
+    <string name="kcal_unit_of_measurement_label">kcal/unit of measurement (Only number)</string>
+    <string name="add_food_label">Add Food</string>
+</resources>
