@@ -5,4 +5,9 @@
     <string name="unit_of_measurement_label">Unit of measurement (Example: Kg, mL, etc)</string>
     <string name="kcal_unit_of_measurement_label">kcal/unit of measurement (Only number)</string>
     <string name="add_food_label">Add Food</string>
+    <string name="empty_fields_error">Fields cannot be empty!</string>
+    <string name="g">g</string>
+    <string name="kg">Kg</string>
+    <string name="ml">mL</string>
+    <string name="l">L</string>
 </resources>

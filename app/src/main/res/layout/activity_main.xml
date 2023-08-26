@@ -49,18 +49,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodNameInput" />
 
-    <EditText
-        android:id="@+id/unitOfMeasurementInput"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -69,7 +57,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/kcal_unit_of_measurement_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unitOfMeasurementInput" />
+        app:layout_constraintTop_toBottomOf="@+id/unitMeasurementSpinner" />
 
     <EditText
         android:id="@+id/kcalPerUnitInput"
@@ -84,12 +72,84 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addFoodButton"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:onClick="addNewFood"
         android:text="@string/add_food_label"
-        app:layout_constraintStart_toStartOf="@+id/kcalPerUnitInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupCookInfo" />
+
+    <Button
+        android:id="@+id/clearFieldsButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:onClick="clearFields"
+        android:text="Clear Fields"
+        app:layout_constraintStart_toEndOf="@+id/addFoodButton"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupCookInfo" />
+
+    <Spinner
+        android:id="@+id/unitMeasurementSpinner"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <CheckBox
+        android:id="@+id/lactoseCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Contains Lactose"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kcalPerUnitInput" />
+
+    <CheckBox
+        android:id="@+id/glutenCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Contains Gluten"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lactoseCheckbox" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupCookInfo"
+        android:layout_width="225dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/glutenCheckbox">
+
+        <RadioButton
+            android:id="@+id/radioButtonNoCook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No need to cook" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFastCook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Very fast to cook" />
+
+        <RadioButton
+            android:id="@+id/radioButtonTakeAWhileCook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Takes a while to cook" />
+
+    </RadioGroup>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
