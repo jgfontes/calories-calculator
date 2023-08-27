@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="foodNameArray">
+        <item>Rice</item>
+        <item>Beef Fillet</item>
+        <item>Milk</item>
+        <item>Banana</item>
+        <item>Chocolate</item>
+    </string-array>
+    
+    <string-array name="kcalPerUnitArray">
+        <item>1.3</item>
+        <item>1.81</item>
+        <item>0.62</item>
+        <item>0.99</item>
+        <item>6.25</item>
+    </string-array>
+
+    <!--Unit of Weight Enum-->
+    <integer-array name="unitOfMeasurementArray">
+        <item>0</item>
+        <item>0</item>
+        <item>2</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <!--Cook Options Enum-->
+    <integer-array name="cookOptionsArray">
+        <item>1</item>
+        <item>2</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <string-array name="containsLactoseArray">
+        <item>false</item>
+        <item>false</item>
+        <item>true</item>
+        <item>false</item>
+        <item>true</item>
+    </string-array>
+
+    <string-array name="containsGlutenArray">
+        <item>true</item>
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+        <item>true</item>
+    </string-array>
+</resources>
