@@ -3,6 +3,8 @@ package com.example.caloriecounter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -41,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addNewFood(View view) {
+        //Get intent to see from which activity it has been called
+        Intent receivedIntent = getIntent();
+        Bundle bundle = receivedIntent.getExtras();
+
         String foodNameStr = foodName.getText().toString().trim();
 //        String unitOfMeasurementStr = unitOfMeasurement.getText().toString();
 
@@ -50,10 +56,20 @@ public class MainActivity extends AppCompatActivity {
         if (foodNameStr == null || foodNameStr.trim().isEmpty()) {
             Toast.makeText(this, R.string.empty_fields_error, Toast.LENGTH_LONG).show();
             foodName.requestFocus();
+            return;
         }
         if (kcalPerUnitStr == null || kcalPerUnitStr.trim().isEmpty()) {
             Toast.makeText(this, R.string.empty_fields_error, Toast.LENGTH_LONG).show();
             kcalPerUnit.requestFocus();
+            return;
+        }
+
+        //If called from Menu Activity
+        if(bundle != null) {
+            String activity_origin = bundle.getString(PrincipalMenuActivity.ACTIVITY_ORIGIN);
+            Intent sendIntent = new Intent();
+            setResult(Activity.RESULT_OK, sendIntent);
+            finish();
         }
 
         Toast.makeText(this, "Food name: " + foodName.getText().toString() + " has been saved", Toast.LENGTH_LONG).show();
@@ -73,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Fields have been cleared!", Toast.LENGTH_SHORT).show();
     }
 
-    public void populateSpinner() {
+    private void populateSpinner() {
         ArrayList<String> unitOfMeasurementValues = new ArrayList<>();
 
         unitOfMeasurementValues.add(getString(R.string.g));
@@ -85,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         unitOfMeasurement.setAdapter(adapter);
     }
 
-    public RadioButton getSelectedRadioButton(View view) {
+    private RadioButton getSelectedRadioButton(View view) {
         Integer radioButtonId = radioGroupCookOptions.getCheckedRadioButtonId();
         if (radioButtonId != null) {
             return findViewById(radioButtonId);
